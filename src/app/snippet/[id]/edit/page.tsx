@@ -1,6 +1,7 @@
 import EditorSnippet from "@/components/EditorSnippet";
 import { prisma } from "@/lib/prisma";
-export default async function({params}: {params:Promise <{id: string}>}) {
+
+export default async function page ({params}: {params:Promise <{id: string}>}) {
     const id = parseInt((await params).id);
     const snippet = await prisma.snippet.findUnique({
         where: {
